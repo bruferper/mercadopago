@@ -1,0 +1,10 @@
+server:
+  servlet:
+    context-path: /api/v1
+
+logging:
+  level:
+    root: INFO
+
+mercadopago:
+  access_token: 'YOUR ACCESS TOKEN'
