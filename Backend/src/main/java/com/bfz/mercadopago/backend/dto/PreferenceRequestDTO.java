@@ -9,8 +9,10 @@ import lombok.*;
 @Builder
 public class PreferenceRequestDTO {
 
-    private String title;
-    private int quantity;
-    private float price;
+    private ItemRequestDTO item;
+    private PayerRequestDTO payer;
+    private PaymentMethodsRequestDTO paymentMethods;
+    private BackUrlsRequestDTO backUrls;
+    private String externalReference;
 
 }
