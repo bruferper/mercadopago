@@ -3,18 +3,26 @@ package com.bfz.mercadopago.backend.converter;
 import com.bfz.mercadopago.backend.dto.PreferenceRequestDTO;
 import com.bfz.mercadopago.backend.dto.PreferenceResponseDTO;
 import com.mercadopago.resources.Preference;
-import com.mercadopago.resources.datastructures.preference.Item;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class PreferenceConverter extends AbstractConverter<Preference, PreferenceRequestDTO, PreferenceResponseDTO>{
+
+    private final BackUrlsConverter backUrlsConverter;
+    private final ItemConverter itemConverter;
+    private final PayerConverter payerConverter;
+    private final PaymentMethodsConverter paymentMethodsConverter;
 
     @Override
     public Preference fromRequestToEntity(PreferenceRequestDTO r) {
         if(r == null) return null;
-        Preference p = new Preference();
-        Item item = new Item();
-        item.setTitle(r.getTitle()).setQuantity(r.getQuantity()).setUnitPrice(r.getPrice());
-        p.appendItem(item);
-        return p;
+        Preference preference = new Preference();
+        preference.setBackUrls(backUrlsConverter.fromRequestToEntity(r.getBackUrls()));
+        preference.appendItem(itemConverter.fromRequestToEntity(r.getItem()));
+        preference.setPayer(payerConverter.fromRequestToEntity(r.getPayer()));
+        preference.setPaymentMethods(paymentMethodsConverter.fromRequestToEntity(r.getPaymentMethods()));
+        preference.setExternalReference(r.getExternalReference());
+        return preference;
     }
 
     @Override

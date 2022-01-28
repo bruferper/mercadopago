@@ -7,4 +7,4 @@ logging:
     root: INFO
 
 mercadopago:
-  access_token: 'YOUR ACCESS TOKEN'
+  access_token: 'TEST-6447174339762455-110320-d3acad1f46097163ad081dd2e3e8ba50-9757054'
