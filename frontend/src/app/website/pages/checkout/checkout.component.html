@@ -1,0 +1,18 @@
+<!-- Content -->
+<div class="text-center">
+  <!-- Product -->
+  <div>
+      <div class="mb-2 font-bold text-lg text-gray-500">{{ product.title }}</div>
+      <div class="mb-2 flex justify-center">
+          <img [src]="product.pictureUrl" class="w-1/2 h-1/4" alt="Imagen del producto">
+      </div>
+      <div class="mb-2 text-gray-500">{{ product.description }}</div>
+      <div class="mb-2">Precio unitario: ${{ product.unitPrice }}</div>
+      <div class="mb-2">Cantidad: <input class="border-2 border-gray-200 text-center w-16 py-1 px-3" type="number" [(ngModel)]="product.quantity" min="1"></div>
+      <div class="mb-5">Precio total: ${{ product.unitPrice * product.quantity | number: '1.2-2'}}</div>
+      <button class="py-2 px-3 bg-gray-900 text-white rounded-md hover:bg-black" (click)="generatePreference()" *ngIf="!loading">Comprar</button>
+      <div class="flex justify-center">
+        <div style="border-top-color:transparent" class="w-10 h-10 border-4 border-gray-900 border-solid rounded-full animate-spin" *ngIf="loading"></div>
+      </div>
+  </div>
+</div>

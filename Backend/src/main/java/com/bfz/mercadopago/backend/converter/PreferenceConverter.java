@@ -22,6 +22,8 @@ public class PreferenceConverter extends AbstractConverter<Preference, Preferenc
         preference.setPayer(payerConverter.fromRequestToEntity(r.getPayer()));
         preference.setPaymentMethods(paymentMethodsConverter.fromRequestToEntity(r.getPaymentMethods()));
         preference.setExternalReference(r.getExternalReference());
+        preference.setAutoReturn(Preference.AutoReturn.approved);
+        preference.setBinaryMode(true);
         return preference;
     }
 
