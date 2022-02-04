@@ -6,17 +6,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CheckoutComponent } from './website/pages/checkout/checkout.component';
-import { SuccessComponent } from './website/pages/checkout/success/success.component';
-import { PendingComponent } from './website/pages/checkout/pending/pending.component';
-import { FailureComponent } from './website/pages/checkout/failure/failure.component';
+import { CheckoutStatusComponent } from './website/pages/checkout/checkout-status/checkout-status.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CheckoutComponent,
-    SuccessComponent,
-    PendingComponent,
-    FailureComponent
+    CheckoutStatusComponent
   ],
   imports: [
     BrowserModule,

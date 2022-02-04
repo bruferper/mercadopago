@@ -1,0 +1,20 @@
+<div>
+  <!-- State message info -->
+  <div class="text-green-900 bg-green-200 border-2 border-green-700 text-center mx-5 py-3 rounded-md shadow-md" *ngIf="status === 'approved'">¡Compra realizada con éxito!</div>
+  <div class="text-blue-900 bg-blue-200 border-2 border-blue-700 text-center mx-5 py-3 rounded-md shadow-md" *ngIf="status === 'pending' || status === 'in_process'">¡Pago pendiente!</div>
+  <div class="text-red-900 bg-red-200 border-2 border-red-700 text-center mx-5 py-3 rounded-md shadow-md" *ngIf="status === 'rejected'">¡Error al realizar el pago!</div>
+  <div class="text-blue-900 bg-blue-200 border-2 border-blue-700 text-center mx-5 py-3 rounded-md shadow-md" *ngIf="status === 'null'">¡Ups! Parece que no has completado el pago.</div>
+
+  <!-- Payment data -->
+  <div class="mt-5 text-center">
+    <div><b>Payment ID:</b> {{ paymentId }}</div>
+    <div><b>Status:</b> {{ status }}</div>
+    <div><b>External Reference:</b> {{ externalReference }}</div>
+    <div><b>Preference ID:</b> {{ preferenceId }}</div>
+  </div>
+
+  <div class="mt-5 text-center">
+    <button [routerLink]="['/checkout']" class="bg-gray-900 text-white hover:bg-black py-2 px-3 rounded-md">Volver a comprar</button>
+  </div>
+
+</div>

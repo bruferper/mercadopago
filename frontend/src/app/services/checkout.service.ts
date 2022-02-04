@@ -35,6 +35,7 @@ export class CheckoutService {
     }
     let paymentMethods: IPaymentMethods = {
       excludedPaymentMethods: ['amex'],
+      excludedPaymentTypes: ['atm'],
       installments: 6
     }
     let backUrls: IBackUrls = {
@@ -47,7 +48,7 @@ export class CheckoutService {
       payer: payer,
       paymentMethods: paymentMethods,
       backUrls: backUrls,
-      externalReference: 'Hsgau1234'
+      externalReference: 'bruferper@gmail.com'
     }
 
     return this.httpClient.post(`${this.backendUrl}/preferences`, preference)

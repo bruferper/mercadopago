@@ -16,10 +16,18 @@ public class PreferenceServiceImpl implements IPreferenceService {
     @Value("${mercadopago.access_token}")
     private String accessToken;
 
+    @Value("${mercadopago.integrator_id}")
+    private String integratorId;
+
+    @Value("${mercadopago.notification_url}")
+    private String notificationUrl;
+
     @Override
     public Preference createPreference(Preference preference) {
         try{
             MercadoPago.SDK.setAccessToken(this.accessToken);
+            MercadoPago.SDK.setIntegratorId(this.integratorId);
+            preference.setNotificationUrl(this.notificationUrl);
             preference.save();
             if(preference.getId() == null) throw new ApiException("Error al crear la preferencia. Datos nulos.", 400);
             return preference;

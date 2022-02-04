@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-success',
-  templateUrl: './success.component.html'
+  selector: 'app-checkout-status',
+  templateUrl: './checkout-status.component.html'
 })
-export class SuccessComponent implements OnInit {
+export class CheckoutStatusComponent implements OnInit {
 
   paymentId: number = 0;
   status: string = '';
@@ -15,6 +15,10 @@ export class SuccessComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getParams();
+  }
+
+  getParams(): void {
     this.activatedRoute.queryParams.subscribe(params => {
       this.paymentId = params['payment_id'];
       this.status = params['status'];
