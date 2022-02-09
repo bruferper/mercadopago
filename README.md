@@ -23,7 +23,7 @@ Some screenshots:
 ![](screenshots/Home.png)
 ![](screenshots/Payment.png)
 
-You can find usefull resources here:
+You can find useful resources here:
 - https://www.mercadopago.com.uy/developers/es/guides
 - https://www.mercadopago.com.uy/developers/es/reference
 
