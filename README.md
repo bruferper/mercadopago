@@ -9,12 +9,12 @@ I built it from scratch using these technologies:
 Backend: 
 - Java 11
 - Spring Boot 2.5
-- Heroku to hosting it
+- Heroku hosting
 
 Frontend:
 - Angular 12
 - Tailwind CSS
-- Firebase to hosting it
+- Firebase hosting
 
 The application is available here: https://mercadopago-dev.web.app
 
