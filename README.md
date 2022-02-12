@@ -1,6 +1,6 @@
 # MercadoPago Certificate Developer
 
-Hi! 
+Hi! 👋
 
 This is the project that I create to get the MercadoPago certification to be an accredited developer.
 
@@ -31,6 +31,6 @@ Get certified!
 
 If you have questions about this certification or code, please let me know and I will be happy to assist you.
 
-*Please, take this code only as reference. Write your own code to practice and rock!*
+*Please, take this code only as reference. Write your own code to practice and rock!* 🔥
 
 ![](screenshots/certificate.png)
